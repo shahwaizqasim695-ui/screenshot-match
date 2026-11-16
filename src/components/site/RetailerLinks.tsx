@@ -26,7 +26,7 @@ export function RetailerLinks({ tone = "light" }: { tone?: "light" | "dark" | un
           ) : (
             <div
               className={cn(
-                "flex items-center justify-between border border-dashed px-5 py-4",
+                "flex flex-col items-start gap-1.5 border border-dashed px-5 py-4",
                 dark ? "border-gold/30 text-on-dark-soft" : "border-gold/50 text-ink-soft",
               )}
             >

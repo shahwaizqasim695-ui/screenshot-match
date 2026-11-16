@@ -34,10 +34,10 @@ export const Route = createFileRoute("/books/$slug")({
     };
   },
   notFoundComponent: () => (
-    <div className="bg-paper flex min-h-[70vh] flex-col items-center justify-center px-5 pt-32 text-center">
-      <h1 className="text-5xl text-forest">This volume isn't on the shelf</h1>
-      <p className="mt-4 text-ink-soft">We couldn't find that book.</p>
-      <Button asChild variant="forest" size="xl" className="mt-8">
+    <div className="bg-emerald-glow flex min-h-[80vh] flex-col items-center justify-center px-5 pb-20 pt-36 text-center">
+      <h1 className="text-5xl text-on-dark">This volume isn't on the shelf</h1>
+      <p className="mt-4 text-on-dark-soft">We couldn't find that book.</p>
+      <Button asChild variant="gold" size="xl" className="mt-8">
         <Link to="/books">View the Trilogy</Link>
       </Button>
     </div>
@@ -118,7 +118,7 @@ function BookDetailPage() {
           <div className="mt-16 grid gap-10 md:grid-cols-3">
             {volumes.map((v, i) => (
               <Reveal key={v.number} delay={i * 0.1}>
-                <article id={`volume-${v.number}`} className="scroll-mt-28">
+                <article id={`volume-${v.number}`} className="scroll-mt-32">
                   <VolumePlaceholder volume={v} className="shadow-card" />
                   <h3 className="mt-7 font-serif text-2xl leading-snug text-forest">{v.title}</h3>
                   <p className="mt-2 font-display text-lg italic text-walnut">{v.theme}</p>

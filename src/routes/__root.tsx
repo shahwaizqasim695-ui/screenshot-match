@@ -18,19 +18,19 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="bg-emerald-glow flex min-h-screen items-center justify-center px-5 pb-20 pt-36">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="eyebrow">Page not found</p>
+        <h1 className="mt-4 text-6xl text-on-dark">A chapter that was never written</h1>
+        <p className="mt-4 text-on-dark-soft">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
+        <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex h-12 items-center justify-center bg-gold px-8 text-xs uppercase tracking-[0.22em] text-charcoal transition-colors hover:bg-champagne"
           >
-            Go home
+            Return Home
           </Link>
         </div>
       </div>
