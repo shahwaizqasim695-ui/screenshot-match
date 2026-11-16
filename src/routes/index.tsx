@@ -1,23 +1,47 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AuthorPreview } from "@/components/site/AuthorPreview";
+import { BookShowcase } from "@/components/site/BookShowcase";
+import { Hero } from "@/components/site/Hero";
+import { HistoricalTimeline } from "@/components/site/HistoricalTimeline";
+import { NewsletterSection } from "@/components/site/NewsletterSection";
+import { QuoteSection } from "@/components/site/QuoteSection";
+import { ReviewsCarousel } from "@/components/site/ReviewsCarousel";
+import { ThemesGrid } from "@/components/site/ThemesGrid";
+import { TrilogySection } from "@/components/site/TrilogySection";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Steve Davis — Concealments, Conspiracies, and Confessions" },
+      {
+        name: "description",
+        content:
+          "Discover Steve Davis's historical fiction trilogy following Jack Walker and Jennifer Palm across nearly six decades of a changing America.",
+      },
+      { property: "og:title", content: "Steve Davis — Concealments, Conspiracies, and Confessions" },
+      {
+        property: "og:description",
+        content: "Some stories are written in time. Others are hidden within it. A Midwestern Boomer trilogy.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <BookShowcase />
+      <TrilogySection />
+      <AuthorPreview />
+      <HistoricalTimeline />
+      <ThemesGrid />
+      <QuoteSection />
+      <ReviewsCarousel />
+      <NewsletterSection />
+    </>
   );
 }

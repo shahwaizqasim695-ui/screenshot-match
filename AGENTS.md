@@ -28,3 +28,11 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Routing uses TanStack Router file routes in `src/routes/` (the spec's "React Router DOM" / `src/pages` maps here); the router is fixed by the stack.
+- Editable copy and book data live in `src/data/` (`books.ts`, `siteContent.ts`); components read from there so content changes never touch layout code.
+- Site sections are in `src/components/site/`; brand colors, fonts, gradients and the 3D book mockup are tokens/utilities in `src/styles.css` — no hardcoded colors in components.
+- Forms post only to endpoints configured in `src/data/siteContent.ts`; with none set they must report "not connected" rather than fake success (covered by `src/lib/forms.test.ts`).
+- Retailer links, social links, reviews and volume covers are placeholders until real ones are supplied; never invent them.
